@@ -4,20 +4,44 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Seiyuu extends Model {
-    
+
     static associate(models) {
-      this.hasOne(models.Character,{foreignKey: "seiyuuId"});
+      this.hasOne(models.Character, { foreignKey: "seiyuuId" });
     }
   }
   Seiyuu.init({
-    name: DataTypes.STRING,
-    birthday: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    height: DataTypes.DECIMAL,
-    twitter: DataTypes.STRING,
-    instagram: DataTypes.STRING,
-    description: DataTypes.STRING,
-    photo: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    birthday: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    height: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    twitter: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    instagram: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Seiyuu',

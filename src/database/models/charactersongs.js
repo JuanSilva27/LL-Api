@@ -11,8 +11,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   CharacterSongs.init({
-    id_character: DataTypes.INTEGER,
-    id_song: DataTypes.INTEGER
+    id_character:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    id_song:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'CharacterSongs',

@@ -4,16 +4,25 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Subunit extends Model {
-   
+
     static associate(models) {
-      this.hasMany(models.Character,{foreignKey:"subunitId"});
-      this.hasMany(models.Song, {foreignKey:"subunitId"});
+      this.hasMany(models.Character, { foreignKey: "subunitId" });
+      this.hasMany(models.Song, { foreignKey: "subunitId" });
     }
   }
   Subunit.init({
-    name: DataTypes.STRING,
-    photo: DataTypes.STRING,
-    logo: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    logo: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Subunit',
