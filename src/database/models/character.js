@@ -4,13 +4,12 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    
+    static associate({Group,Subunit,Seiyuu,Charactersong}) {
+      this.belongsTo(Group,{foreignKey: "groupId"});
+      this.belongsTo(Subunit,{foreignKey: "subunitId"});
+      this.belongsTo(Seiyuu,{foreignKey: "seiyuuId"});
+      this.belongsToMany(Charactersong,{foreignKey: "id_character"});
     }
   }
   Character.init({
@@ -19,17 +18,19 @@ module.exports = (sequelize, DataTypes) => {
     age: DataTypes.INTEGER,
     height: DataTypes.DECIMAL,
     sizes: DataTypes.STRING,
-    group: DataTypes.INTEGER,
-    subunit: DataTypes.INTEGER,
+    groupId: DataTypes.INTEGER,
+    subunitId: DataTypes.INTEGER,
     color: DataTypes.STRING,
     signature: DataTypes.STRING,
     photo: DataTypes.STRING,
-    seiyuu: DataTypes.INTEGER,
+    seiyuuId: DataTypes.INTEGER,
     description: DataTypes.STRING,
     icon: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Character',
+    timestamps: true,
+    paranoid: true
   });
   return Character;
 };
