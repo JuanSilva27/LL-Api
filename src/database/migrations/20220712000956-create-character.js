@@ -38,7 +38,7 @@ module.exports = {
       photo: {
         type: Sequelize.STRING
       },
-      seiyuu: {
+      seiyuuId: {
         type: Sequelize.INTEGER
       },
       description: {
