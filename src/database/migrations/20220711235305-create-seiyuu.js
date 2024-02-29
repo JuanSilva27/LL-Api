@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Characters', {
+    await queryInterface.createTable('Seiyuu', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,31 +20,16 @@ module.exports = {
       height: {
         type: Sequelize.DECIMAL
       },
-      sizes: {
+      twitter: {
         type: Sequelize.STRING
       },
-      group: {
-        type: Sequelize.INTEGER
-      },
-      subunit: {
-        type: Sequelize.INTEGER
-      },
-      color: {
+      instagram: {
         type: Sequelize.STRING
-      },
-      signature: {
-        type: Sequelize.STRING
-      },
-      photo: {
-        type: Sequelize.STRING
-      },
-      seiyuu: {
-        type: Sequelize.INTEGER
       },
       description: {
         type: Sequelize.STRING
       },
-      icon: {
+      photo: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -58,6 +43,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Characters');
+    await queryInterface.dropTable('Seiyuus');
   }
 };
