@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Group', [
+    await queryInterface.bulkInsert('idol_group', [
       {
         name: 'μ\'s',
         photo: 'https://example.com/muse.jpg',
@@ -18,7 +18,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      // Add more groups as needed
+      // Add more idol_groups as needed
     ], {});
   },
 

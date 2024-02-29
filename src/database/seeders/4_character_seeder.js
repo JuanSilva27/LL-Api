@@ -10,7 +10,7 @@ module.exports = {
         age: 16,
         height: 1.57,
         sizes: '78/58/82',
-        groupId: 1,
+        idol_groupId: 1,
         subunitId: 1,
         color: '#e2732d',
         signature: 'HonokaSignatureUrl',

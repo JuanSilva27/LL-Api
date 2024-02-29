@@ -23,7 +23,7 @@ module.exports = {
       sizes: {
         type: Sequelize.STRING
       },
-      groupId: {
+      idol_groupId: {
         type: Sequelize.INTEGER
       },
       subunitId: {

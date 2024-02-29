@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('Song', [
       {
         name: 'Bokura no LIVE Kimi to no LIFE',
-        group: 1,
+        idol_group: 1,
         photo: 'https://example.com/snow_halation.jpg',
         link: 'https://www.youtube.com/watch?v=WW8B_qEy2hI',
         createdAt: new Date(),
@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         name: 'Snow Halation',
-        group: 1,
+        idol_group: 1,
         photo: 'https://example.com/snow_halation.jpg',
         link: 'https://www.youtube.com/watch?v=WW8B_qEy2hI',
         createdAt: new Date(),
@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         name: 'START:DASH!!',
-        group: 1,
+        idol_group: 1,
         photo: 'https://example.com/start_dash.jpg',
         link: 'https://www.youtube.com/watch?v=d4KYtTy_h4s',
         createdAt: new Date(),

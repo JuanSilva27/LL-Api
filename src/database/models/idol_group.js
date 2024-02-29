@@ -3,13 +3,13 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Group extends Model {
+  class Idol_group extends Model {
     static associate(models) {
-      this.hasMany(models.Character, {foreignKey:"groupId"});
-      this.hasMany(models.Song, {foreignKey:"groupId"});
+      this.hasMany(models.Character, {foreignKey:"idol_groupId"});
+      this.hasMany(models.Song, {foreignKey:"idol_groupId"});
     }
   }
-  Group.init({
+  idol_group.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -24,9 +24,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Group',
+    modelName: 'idol_group',
     timestamps: true,
     paranoid: true
   });
-  return Group;
+  return Idol_group;
 };

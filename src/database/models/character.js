@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
 
-    static associate({ Group, Subunit, Seiyuu, Charactersong }) {
-      this.belongsTo(Group, { foreignKey: "groupId" });
+    static associate({ Idol_group, Subunit, Seiyuu, Charactersong }) {
+      this.belongsTo(Idol_group, { foreignKey: "idol_groupId" });
       this.belongsTo(Subunit, { foreignKey: "subunitId" });
       this.belongsTo(Seiyuu, { foreignKey: "seiyuuId" });
       this.belongsToMany(Charactersong, { foreignKey: "id_character" });
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true
     },
-    groupId: {
+    idol_groupId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },

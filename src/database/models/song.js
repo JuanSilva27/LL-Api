@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Song extends Model {
 
     static associate(models) {
-      this.belongsTo(models.Group, { foreignKey: "groupId" });
+      this.belongsTo(models.idol_group, { foreignKey: "idol_groupId" });
       this.belongsTo(models.Subunit, { foreignKey: "subunitId" });
       this.belongsToMany(models.Character, { through: "charactersongs", foreignKey: "id_song" });
     }
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    groupId: {
+    idol_groupId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
