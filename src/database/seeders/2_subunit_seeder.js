@@ -18,6 +18,13 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: 'BiBi',
+        photo: 'https://example.com/bibi.jpg',
+        logo: 'https://example.com/bibi_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
     
   },
