@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Songs', [
+    await queryInterface.bulkInsert('Song', [
       {
         name: 'Bokura no LIVE Kimi to no LIFE',
         group: 1,
