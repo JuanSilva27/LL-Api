@@ -23,10 +23,10 @@ module.exports = {
       sizes: {
         type: Sequelize.STRING
       },
-      group: {
+      groupId: {
         type: Sequelize.INTEGER
       },
-      subunit: {
+      subunitId: {
         type: Sequelize.INTEGER
       },
       color: {
