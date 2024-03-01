@@ -11,11 +11,11 @@ module.exports = {
       3:[1,2,3,4,5,6,7,8,9],
     }
 
-    for (const [charcterId, songIds] of Object.entries(charactersongs)){
-      songIds.forEach(songId=>{
+    for (const [songId,charcterIds] of Object.entries(charactersongs)){
+      charcterIds.forEach(charcterId=>{
         relations.push({
           id_character: parseInt(charcterId),
-          id_song: songId,
+          id_song: parseInt(songId),
           createdAt: new Date(),
           updatedAt: new Date()
         })
