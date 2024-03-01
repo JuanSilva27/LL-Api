@@ -3,172 +3,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Charactersongs', [
-      {
-        id_character: 1,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 1,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 1,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 2,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 2,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 2,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 3,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 2,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 3,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 4,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 4,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 4,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 5,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 5,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 5,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 6,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 6,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 6,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 7,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 7,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 7,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 8,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 8,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 8,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 9,
-        id_song: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 9,
-        id_song: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        id_character: 9,
-        id_song: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }
 
+    const relations =[]
 
-    ], {});
+    const charactersongs = { /* aqui estan las relaciones entre las canciones y los personajes que interpretan dichas canciones */
+      1:[1,2,3,4,5,6,7,8,9],
+      2:[1,2,3,4,5,6,7,8,9],
+      3:[1,2,3,4,5,6,7,8,9],
+    }
+
+    for (const [charcterId, songIds] of Object.entries(charactersongs)){
+      songIds.forEach(songId=>{
+        relations.push({
+          id_character: parseInt(charcterId),
+          id_song: songId,
+          createdAt: new DATE(),
+          updatedAt: new DATE(), 
+        })
+      })
+    }
+
+    await queryInterface.bulkInsert('Charactersongs',relations,{});
    
   },
 
