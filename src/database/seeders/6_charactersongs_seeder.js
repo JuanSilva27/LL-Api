@@ -1,5 +1,4 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -17,8 +16,8 @@ module.exports = {
         relations.push({
           id_character: parseInt(charcterId),
           id_song: songId,
-          createdAt: new DATE(),
-          updatedAt: new DATE(), 
+          createdAt: new Date(),
+          updatedAt: new Date()
         })
       })
     }
