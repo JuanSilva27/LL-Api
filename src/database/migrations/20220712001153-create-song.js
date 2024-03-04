@@ -11,10 +11,10 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      idol_group: {
+      idol_groupId: {
         type: Sequelize.INTEGER
       },
-      subunit: {
+      subunitId: {
         type: Sequelize.INTEGER
       },
       photo: {

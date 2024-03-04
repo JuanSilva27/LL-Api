@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     subunitId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     photo: {
       type: DataTypes.STRING,
