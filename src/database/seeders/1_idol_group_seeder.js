@@ -12,13 +12,37 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        name: 'Nijigasaki',
+        photo: 'https://example.com/nijigasaki.jpg',
+        logo: 'https://example.com/nijigasaki_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        name: 'Liella!',
+        photo: 'https://example.com/liella!.jpg',
+        logo: 'https://example.com/liella!_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
+        name: 'Hasu no Sora',
+        photo: 'https://example.com/hasunosora.jpg',
+        logo: 'https://example.com/hasunosora_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      
+      {
         name: 'Aqours',
         photo: 'https://example.com/aqours.jpg',
         logo: 'https://example.com/aqours_logo.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      // Add more idol_groups as needed
+      
     ], {});
   },
 
