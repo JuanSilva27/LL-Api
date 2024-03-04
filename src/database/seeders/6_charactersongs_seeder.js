@@ -6,7 +6,7 @@ module.exports = {
     const relations =[]
     /* aqui estan las relaciones entre las canciones y los personajes que interpretan dichas canciones */
     /* cada cancion tiene un array de numeros que son los id de los personajes que interpretan dicha cancion  */
-    const charactersongs = require('../utils/charactersong.json')
+    const charactersongs = require('../../utils/charactersong.json')
 
     for (const [songId,charcterIds] of Object.entries(charactersongs)){
       charcterIds.forEach(charcterId=>{
