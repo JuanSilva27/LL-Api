@@ -27,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Subunit',
     timestamps: true,
-    paranoid: true
   });
   return Subunit;
 };

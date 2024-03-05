@@ -46,7 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Seiyuu',
     timestamps: true,
-    paranoid: true
   });
   return Seiyuu;
 };

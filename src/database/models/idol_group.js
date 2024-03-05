@@ -5,11 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Idol_group extends Model {
     static associate(models) {
-      this.hasMany(models.Character, {foreignKey:"idol_groupId"});
-      this.hasMany(models.Song, {foreignKey:"idol_groupId"});
+      this.hasMany(models.Character, { foreignKey: "idol_groupId" });
+      this.hasMany(models.Song, { foreignKey: "idol_groupId" });
     }
   }
-  idol_group.init({
+  Idol_group.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -24,9 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'idol_group',
+    modelName: 'Idol_group',
     timestamps: true,
-    paranoid: true
   });
   return Idol_group;
 };

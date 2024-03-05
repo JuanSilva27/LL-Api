@@ -5,11 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
 
-    static associate({ Idol_group, Subunit, Seiyuu, Charactersong }) {
+    static associate({ Idol_group, Subunit, Seiyuu, CharacterSongs }) {
       this.belongsTo(Idol_group, { foreignKey: "idol_groupId" });
       this.belongsTo(Subunit, { foreignKey: "subunitId" });
       this.belongsTo(Seiyuu, { foreignKey: "seiyuuId" });
-      this.belongsToMany(Charactersong, { foreignKey: "id_character" });
+      this.belongsToMany(CharacterSongs, { through: 'CharacterCharacterSongs', foreignKey: "id_character" });
     }
   }
   Character.init({
@@ -70,7 +70,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Character',
     tableName: 'characters',
     timestamps: true,
-    paranoid: true
   });
   return Character;
 };

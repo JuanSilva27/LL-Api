@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     
     static associate(models) {
       this.belongsTo(models.Character,{foreignKey: "id_character"});
-      this.belongsTo(models.song,{foreignKey: "id_song"});
+      this.belongsTo(models.Song,{foreignKey: "id_song"});
     }
   }
   CharacterSongs.init({
@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'CharacterSongs',
     timestamps: true,
-    paranoid: true
   });
   return CharacterSongs;
 };
