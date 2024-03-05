@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('idol_group', [
       {
         name: 'μ\'s',
@@ -11,30 +11,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
-        name: 'Nijigasaki',
-        photo: 'https://example.com/nijigasaki.jpg',
-        logo: 'https://example.com/nijigasaki_logo.jpg',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      
-      {
-        name: 'Liella!',
-        photo: 'https://example.com/liella!.jpg',
-        logo: 'https://example.com/liella!_logo.jpg',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      
-      {
-        name: 'Hasu no Sora',
-        photo: 'https://example.com/hasunosora.jpg',
-        logo: 'https://example.com/hasunosora_logo.jpg',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      
+
       {
         name: 'Aqours',
         photo: 'https://example.com/aqours.jpg',
@@ -43,10 +20,35 @@ module.exports = {
         updatedAt: new Date()
       },
       
+      {
+        name: 'Nijigasaki',
+        photo: 'https://example.com/nijigasaki.jpg',
+        logo: 'https://example.com/nijigasaki_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+      {
+        name: 'Liella!',
+        photo: 'https://example.com/liella!.jpg',
+        logo: 'https://example.com/liella!_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+      {
+        name: 'Hasu no Sora',
+        photo: 'https://example.com/hasunosora.jpg',
+        logo: 'https://example.com/hasunosora_logo.jpg',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+
     ], {});
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
