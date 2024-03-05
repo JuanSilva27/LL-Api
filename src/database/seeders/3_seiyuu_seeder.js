@@ -101,7 +101,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Nitta Emi',
+        name: 'Tokoui Sora',
         birthday: 'December 26',
         age: 34,
         height: 1.59,
