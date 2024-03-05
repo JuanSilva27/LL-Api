@@ -111,7 +111,6 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      // Agrega más objetos para más Seiyuus si lo deseas
     ], {});
   },
 
