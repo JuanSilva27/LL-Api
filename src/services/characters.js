@@ -17,7 +17,7 @@ const getCharacterByIdService = async (req) => {
     try {
         const { id } = req.params
         const character = await charactersRepository.getCharacterById(id)
-        if(character===null){
+        if(!character){
             throwError('Character not found', NotFound)
         }
         return character
