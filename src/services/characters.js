@@ -1,6 +1,6 @@
 const charactersRepository = require("../repositories/character")
 const { throwError } = require("../utils/errorHandle")
-const { ISError, NotFound } = require("../utils/status")
+const { NotFound } = require("../utils/status")
 
 
 const getAllCharactersService = async (req) => {
@@ -9,7 +9,7 @@ const getAllCharactersService = async (req) => {
         const characters = await charactersRepository.getAllCharacters(condition)
         return characters
     } catch (error) {
-        throwError(error.message, ISError)
+        throwError(error.message, error.status)
     }
 };
 

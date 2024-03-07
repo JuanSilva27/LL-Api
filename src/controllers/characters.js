@@ -1,4 +1,4 @@
-const {getAllCharactersService, getCharacterByIdService} = require("../services/characters");
+const { getAllCharactersService, getCharacterByIdService } = require("../services/characters");
 const { OK } = require("../utils/status");
 
 const getAllCharacters = async (req, res, next) => {
@@ -9,23 +9,23 @@ const getAllCharacters = async (req, res, next) => {
             data: result
         });
     }
-     catch (error) {
-        return res.status(error.status).json({status: error.status, error:error.message})
+    catch (error) {
+        return res.status(error.status).json({ status: error.status, error: error.message })
     }
 };
 
-const getCharacterById = async (req, res, next) =>{
+const getCharacterById = async (req, res, next) => {
     try {
         const result = await getCharacterByIdService(req)
 
         res.status(OK).json({
-            data:result
+            data: result
         });
 
     } catch (error) {
-        return res.status(error.status).json({status: error.status, error:error.message})
+        return res.status(error.status).json({ status: error.status, error: error.message })
     }
 }
 
 
-module.exports={getAllCharacters, getCharacterById}
+module.exports = { getAllCharacters, getCharacterById }
