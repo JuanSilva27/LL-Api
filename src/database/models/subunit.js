@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Subunit',
+    tableName:'subunit',
     timestamps: true,
   });
   return Subunit;

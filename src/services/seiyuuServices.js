@@ -1,4 +1,4 @@
-const seiyuuRepositry = require('../repositories/seiyuuRepositry')
+const seiyuuRepositry = require('../repositories/seiyuuRepository')
 const { throwError } = require('../utils/errorHandle')
 const { ISError, NotFound } = require('../utils/status')
 

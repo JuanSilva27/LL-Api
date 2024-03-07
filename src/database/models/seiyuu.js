@@ -45,6 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Seiyuu',
+    tableName: 'seiyuu',
     timestamps: true,
   });
   return Seiyuu;

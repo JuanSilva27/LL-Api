@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Idol_group',
+    tableName: 'idol_group',
     timestamps: true,
   });
   return Idol_group;
