@@ -1,4 +1,4 @@
-const songRepository = require('../repositories/song')
+const songRepository = require('../repositories/songRepository')
 const { throwError } = require('../utils/errorHandle')
 const { ISError, NotFound } = require('../utils/status')
 

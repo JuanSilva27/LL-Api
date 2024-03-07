@@ -1,9 +1,9 @@
-const { getAllCharactersService, getCharacterByIdService } = require("../services/charactersServices");
+const { getAllSeiyuuService, getSeiyuuByIdService } = require('../services/seiyuuServices')
 const { OK } = require("../utils/status");
 
-const getAllCharacters = async (req, res, next) => {
+const getAllSeiyuus = async (req, res, next) => {
     try {
-        const result = await getAllCharactersService(req);
+        const result = await getAllSeiyuuService(req);
 
         res.status(OK).json({
             data: result
@@ -14,9 +14,10 @@ const getAllCharacters = async (req, res, next) => {
     }
 };
 
-const getCharacterById = async (req, res, next) => {
+const getSeiyuuById = async (req, res, next) => {
     try {
-        const result = await getCharacterByIdService(req)
+        const result = await getSeiyuuByIdService(req)
+        console.log(result)
 
         res.status(OK).json({
             data: result
@@ -28,4 +29,4 @@ const getCharacterById = async (req, res, next) => {
 }
 
 
-module.exports = { getAllCharacters, getCharacterById }
+module.exports = { getAllSeiyuus, getSeiyuuById }

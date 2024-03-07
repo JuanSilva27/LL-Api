@@ -1,4 +1,4 @@
-const charactersRepository = require("../repositories/character")
+const charactersRepository = require("../repositories/characterRepository")
 const { throwError } = require("../utils/errorHandle")
 const { NotFound } = require("../utils/status")
 

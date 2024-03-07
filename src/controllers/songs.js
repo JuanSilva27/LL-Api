@@ -1,4 +1,4 @@
-const { getAllSongsService, getSongByIdService } = require('../services/song')
+const { getAllSongsService, getSongByIdService } = require('../services/songServices')
 const { OK } = require("../utils/status");
 
 const getAllSongs = async (req, res, next) => {
