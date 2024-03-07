@@ -6,8 +6,8 @@ const { ISError, NotFound } = require('../utils/status')
 const getAllSeiyuuService = async (req) =>{
     try {
         const condition = req.query
-        const seiyuu = await seiyuuRepositry.getAllSeiyuus(condition)
-        return seiyuu
+        const seiyuus = await seiyuuRepositry.getAllSeiyuus(condition)
+        return seiyuus
     } catch (error) {
         throwError(error.message, ISError)
     }
@@ -16,11 +16,11 @@ const getAllSeiyuuService = async (req) =>{
 const getSeiyuuByIdService = async (req) =>{
     try {
         const {id} = req.params
-        const song = await seiyuuRepositry.getSeiyuuById(id)
-        if(!song){
+        const seiyuu = await seiyuuRepositry.getSeiyuuById(id)
+        if(!seiyuu){
             throwError('Seiyuu not found', NotFound)
         }
-        return song
+        return seiyuu
     } catch (error) {
         throwError(error.message, error.status)
     }

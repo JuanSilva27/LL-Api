@@ -10,6 +10,7 @@ const charactersRouter = require('./routes/characters')
 const songsRouter = require('./routes/songs')
 const SeiyuusRouter = require('./routes/seiyuu')
 const IdolGroupsRouter = require('./routes/idolGroup')
+const SubunitsRouter = require('./routes/subunit')
 
 const app = express();
 
@@ -28,7 +29,8 @@ app.use('/users', usersRouter);
 app.use('/characters', charactersRouter)
 app.use('/songs', songsRouter)
 app.use('/seiyuus', SeiyuusRouter)
-app.use('/idolGroup', IdolGroupsRouter)
+app.use('/idolGroups', IdolGroupsRouter)
+app.use('/subunits', SubunitsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
