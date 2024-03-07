@@ -17,9 +17,10 @@ const getAllSongs = async (req, res, next) => {
 const getSongById = async (req, res, next) =>{
     try {
         const result = await getSongByIdService(req)
+        console.log(result)
 
         res.status(OK).json({
-            data:result
+            data: result
         });
 
     } catch (error) {

@@ -20,8 +20,9 @@ const getSongByIdService = async (req) =>{
         if(!song){
             throwError('Song not found', NotFound)
         }
+        return song
     } catch (error) {
-        throwError(error.message, ISError)
+        throwError(error.message, error.status)
     }
 }
 
