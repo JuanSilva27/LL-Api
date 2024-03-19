@@ -9,7 +9,7 @@ const getAllIdolGroupsService = async (req) => {
         const idolGroups = await idolGroupRepository.getAllIdolGroups(condition)
         return idolGroups
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 };
 
@@ -22,7 +22,7 @@ const getIdolGroupByIdService = async (req) => {
         }
         return idolGroup
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 }
 
