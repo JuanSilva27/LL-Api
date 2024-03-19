@@ -10,7 +10,7 @@ const getAllSubunits = async (req, res, next) => {
         });
     }
     catch (error) {
-        return res.status(error.status).json({ status: error.status, error: error.message })
+        next(error)
     }
 };
 
@@ -23,7 +23,7 @@ const getSubunitById = async (req, res, next) => {
         });
 
     } catch (error) {
-        return res.status(error.status).json({ status: error.status, error: error.message })
+        next(error)
     }
 }
 

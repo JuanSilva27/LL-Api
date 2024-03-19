@@ -9,7 +9,7 @@ const getAllSeiyuuService = async (req) =>{
         const seiyuus = await seiyuuRepositry.getAllSeiyuus(condition)
         return seiyuus
     } catch (error) {
-        throwError(error.message, ISError)
+        throw error
     }
 }
 
@@ -22,7 +22,7 @@ const getSeiyuuByIdService = async (req) =>{
         }
         return seiyuu
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 }
 

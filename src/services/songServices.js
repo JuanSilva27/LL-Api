@@ -9,7 +9,7 @@ const getAllSongsService = async (req) =>{
         const songs = await songRepository.getAllSongs(condition)
         return songs
     } catch (error) {
-        throwError(error.message, ISError)
+        throw error
     }
 }
 
@@ -22,7 +22,7 @@ const getSongByIdService = async (req) =>{
         }
         return song
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 }
 

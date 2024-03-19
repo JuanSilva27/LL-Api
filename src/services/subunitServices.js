@@ -22,7 +22,7 @@ const getSubunitByIdService = async (req) =>{
         }
         return subunit
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 }
 

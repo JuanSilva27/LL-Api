@@ -10,7 +10,7 @@ const getAllSongs = async (req, res, next) => {
         });
     }
      catch (error) {
-        return res.status(error.status).json({status: error.status, error:error.message})
+        next(error)
     }
 };
 
@@ -24,7 +24,7 @@ const getSongById = async (req, res, next) =>{
         });
 
     } catch (error) {
-        return res.status(error.status).json({status: error.status, error:error.message})
+        next(error)
     }
 }
 

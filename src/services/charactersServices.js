@@ -9,7 +9,7 @@ const getAllCharactersService = async (req) => {
         const characters = await charactersRepository.getAllCharacters(condition)
         return characters
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 };
 
@@ -22,7 +22,7 @@ const getCharacterByIdService = async (req) => {
         }
         return character
     } catch (error) {
-        throwError(error.message, error.status)
+        throw error
     }
 }
 
