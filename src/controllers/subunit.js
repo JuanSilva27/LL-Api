@@ -6,7 +6,7 @@ const getAllSubunits = async (req, res, next) => {
         const result = await getAllSubunitService(req);
 
         res.status(OK).json({
-            data: result
+              result
         });
     }
     catch (error) {
@@ -19,7 +19,7 @@ const getSubunitById = async (req, res, next) => {
         const result = await getSubunitByIdService(req)
 
         res.status(OK).json({
-            data: result
+              result
         });
 
     } catch (error) {

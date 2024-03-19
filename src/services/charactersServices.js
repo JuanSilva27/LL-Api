@@ -6,8 +6,15 @@ const { NotFound } = require("../utils/status")
 const getAllCharactersService = async (req) => {
     try {
         const condition = req.query
-        const characters = await charactersRepository.getAllCharacters(condition)
-        return characters
+        const characters = await charactersRepository.getAllCharacters({attributes: ['id','name']})
+        const data = characters.map(character=>{
+            const {id, ...rest} = character.toJSON();
+            return {
+                ...rest,
+                url:`${process.env.BASE_URL}/characters/${character.id}`
+            }
+        })
+        return data
     } catch (error) {
         throw error
     }

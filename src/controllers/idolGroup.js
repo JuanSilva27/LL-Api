@@ -6,7 +6,7 @@ const getAllIdolGroups = async (req, res, next) => {
         const result = await getAllIdolGroupsService(req)
 
         res.status(OK).json({
-            data: result
+              result
         });
     }
     catch (error) {
@@ -18,7 +18,7 @@ const getIdolGroupById = async (req, res, next) => {
     try {
         const result = await getIdolGroupByIdService(req)
         res.status(OK).json({
-            data: result
+              result
         });
 
     } catch (error) {

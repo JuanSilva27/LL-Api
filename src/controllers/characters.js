@@ -6,7 +6,7 @@ const getAllCharacters = async (req, res, next) => {
         const result = await getAllCharactersService(req);
 
         res.status(OK).json({
-            data: result
+              result
         });
     }
     catch (error) {
@@ -19,7 +19,7 @@ const getCharacterById = async (req, res, next) => {
         const result = await getCharacterByIdService(req)
 
         res.status(OK).json({
-            data: result
+              result
         });
 
     } catch (error) {

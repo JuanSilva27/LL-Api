@@ -6,7 +6,7 @@ const getAllSeiyuus = async (req, res, next) => {
         const result = await getAllSeiyuuService(req);
 
         res.status(OK).json({
-            data: result
+              result
         });
     }
     catch (error) {
@@ -20,7 +20,7 @@ const getSeiyuuById = async (req, res, next) => {
         console.log(result)
 
         res.status(OK).json({
-            data: result
+              result
         });
 
     } catch (error) {
