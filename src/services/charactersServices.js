@@ -6,7 +6,6 @@ const { paginated } = require("./paginated.service");
 
 const getAllCharactersService = async (req) => {
     try {
-        const condition = req.query
         const {limit, offset} =req.query
         const characters = await charactersRepository.getAllCharacters({ attributes: ['id', 'name'] })
         const data = characters.map(character => {
