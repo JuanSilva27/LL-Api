@@ -5,9 +5,7 @@ const getAllCharacters = async (req, res, next) => {
     try {
         const result = await getAllCharactersService(req);
 
-        res.status(OK).json({
-              result
-        });
+        res.status(OK).json(result);
     }
     catch (error) {
         next(error)
