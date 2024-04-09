@@ -5,7 +5,6 @@ const paginated = (data, limit, offset) => {
     const endIndex = parseInt(startIndex) + parseInt(limit);
     const nextOffset = endIndex< data.length? endIndex : null;
     const previousOffset = offset > 0 ? Math.max(offset - limit, 0): null
-    console.log(startIndex,endIndex)
     const dataPaginated = data.slice(startIndex, endIndex);
     const dataParsed = {
         count: data.length,
