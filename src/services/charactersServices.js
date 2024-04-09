@@ -33,10 +33,13 @@ const getCharacterByIdService = async (req) => {
             throwError('Character not found', NotFound)
         }
 
-        const idolGroup = await idolGroupRepository.getIdolGroupById(character.idol_groupId)
-        const subunit = await subunitRepository.getSubunitById(character.subunitId)
-        const seiyuu = await seiyuuRepository.getSeiyuuById(character.seiyuuId)
+        const [idolGroup,subunit,seiyuu] = await Promise.all ([
+            idolGroupRepository.getIdolGroupById(character.idol_groupId),
+            subunitRepository.getSubunitById(character.subunitId),
+            seiyuuRepository.getSeiyuuById(character.seiyuuId)
 
+        ])
+        
         const result = {
             ...character.toJSON(),
             idol_groupId: {
