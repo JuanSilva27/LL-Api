@@ -23,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     height: {
-      type: DataTypes.STRING,
-      allowNull: true
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false
     },
     twitter: {
       type: DataTypes.STRING,

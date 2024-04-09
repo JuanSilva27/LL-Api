@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       height: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       sizes: {
         type: Sequelize.STRING

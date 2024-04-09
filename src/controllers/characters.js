@@ -16,9 +16,9 @@ const getCharacterById = async (req, res, next) => {
     try {
         const result = await getCharacterByIdService(req)
 
-        res.status(OK).json({
+        res.status(OK).json(
               result
-        });
+        );
 
     } catch (error) {
         next(error)
