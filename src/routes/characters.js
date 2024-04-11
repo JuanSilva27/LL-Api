@@ -4,5 +4,6 @@ const { getAllCharacters, getCharacterById } = require('../controllers/character
 
 router.get('/', getAllCharacters );
 router.get('/:id', getCharacterById );
+router.get('/:name', getCharacterById );
 
 module.exports = router;

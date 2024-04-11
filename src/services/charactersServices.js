@@ -5,6 +5,7 @@ const { Seiyuu } = require("../database/models")
 const { throwError } = require("../utils/errorHandle")
 const { NotFound } = require("../utils/status");
 const { paginated } = require("./paginated.service");
+const { getAttributeValue } = require("../utils/getAttributeValue")
 
 
 const getAllCharactersService = async (req) => {
@@ -38,23 +39,14 @@ const getCharacterByIdService = async (req) => {
             attributes: { exclude: ['idol_groupId', 'subunitId', 'seiyuuId', 'createdAt', 'updatedAt'] }
         })
         if (!character) {
-            throwError('Character not found', NotFound)
+            throwError(`Character with ID ${id} not found`, NotFound)
         }
 
         const result = {
             ...character.toJSON(),
-            idolGroup: {
-                name: character.idolGroup ? character.idolGroup.name : null,
-                url: character.idolGroup ? `${process.env.BASE_URL}/idolGroups/${character.idolGroup.id}` : null
-            },
-            subunit: {
-                name: character.subunit ? character.subunit.name : null,
-                url: character.subunit ? `${process.env.BASE_URL}/subunits/${character.subunit.id}` : null
-            },
-            seiyuu: {
-                name: character.seiyuu ? character.seiyuu.name : null,
-                url: character.seiyuu ? `${process.env.BASE_URL}/seiyuus/${character.seiyuu.id}` : null
-            },
+            idolGroup: getAttributeValue(character, 'idolGroup'),
+            subunit: getAttributeValue(character, 'subunit'),
+            seiyuu: getAttributeValue(character, 'seiyuu')
 
         }
 
