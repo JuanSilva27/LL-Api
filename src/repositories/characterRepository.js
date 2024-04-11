@@ -9,4 +9,8 @@ const getCharacterById = async (id) =>{
    return await Character.findByPk(id);
 }
 
-module.exports= {getAllCharacters,getCharacterById};
+const getOneCharacter = async (condition) => {
+    return await Character.findOne(condition)
+} 
+
+module.exports= {getAllCharacters,getCharacterById,getOneCharacter};
