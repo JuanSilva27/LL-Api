@@ -41,7 +41,7 @@ module.exports = {
       type: 'foreign key',
       name: 'fk_character_songs_song_id',
       references: {
-        table: 'songs',
+        table: 'song',
         field: 'id'
       },
       onDelete: 'CASCADE',
