@@ -32,6 +32,30 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+
+    await queryInterface.addConstraint('Song', {
+      fields: ['idol_groupId'],
+      type: 'foreign key',
+      name: 'fk_song_idol_groupId',
+      references: {
+        table: 'idol_group',
+        field: 'id'
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    });
+
+    await queryInterface.addConstraint('Song', {
+      fields: ['subunitId'],
+      type: 'foreign key',
+      name: 'fk_song_subunitId',
+      references: {
+        table: 'subunit',
+        field: 'id'
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Song');
