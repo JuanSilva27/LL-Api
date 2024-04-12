@@ -24,10 +24,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       idol_groupId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Idol_group',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       subunitId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model: 'Subunit',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       color: {
         type: Sequelize.STRING
@@ -39,7 +53,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       seiyuuId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model: 'Seiyuu',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       description: {
         type: Sequelize.TEXT
@@ -55,6 +76,42 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    });
+
+    await queryInterface.addConstraint('Characters', {
+      fields: ['idol_groupId'],
+      type: 'foreign key',
+      name: 'fk_characters_idol_groupId',
+      references: {
+        table: 'idol_group',
+        field: 'id'
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    });
+
+    await queryInterface.addConstraint('Characters', {
+      fields: ['subunitId'],
+      type: 'foreign key',
+      name: 'fk_characters_subunitId',
+      references: {
+        table: 'subunit',
+        field: 'id'
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    });
+
+    await queryInterface.addConstraint('Characters', {
+      fields: ['seiyuuId'],
+      type: 'foreign key',
+      name: 'fk_characters_seiyuuId',
+      references: {
+        table: 'seiyuu',
+        field: 'id'
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
     });
   },
   async down(queryInterface, Sequelize) {
