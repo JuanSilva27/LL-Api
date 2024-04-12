@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Idol_group, { foreignKey: "idol_groupId" });
       this.belongsTo(models.Subunit, { foreignKey: "subunitId" });
-      this.belongsToMany(models.Character, { through: "charactersongs", foreignKey: "id_song" });
+      this.belongsToMany(models.Character, { through: "CharacterSongs", foreignKey: "id_song" });
     }
   }
   Song.init({
