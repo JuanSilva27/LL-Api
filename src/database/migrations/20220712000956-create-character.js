@@ -97,6 +97,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Character');
+    await queryInterface.dropTable('Characters');
   }
 };
