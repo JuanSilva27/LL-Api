@@ -25,23 +25,11 @@ module.exports = {
       },
       idol_groupId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Idol_group',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        allowNull: false
       },
       subunitId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references:{
-          model: 'Subunit',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        allowNull: false
       },
       color: {
         type: Sequelize.STRING
@@ -54,13 +42,7 @@ module.exports = {
       },
       seiyuuId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references:{
-          model: 'Seiyuu',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        allowNull: false
       },
       description: {
         type: Sequelize.TEXT
