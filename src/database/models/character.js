@@ -5,11 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
 
-    static associate({ Idol_group, Subunit, Seiyuu, Song }) {
-      this.belongsTo(Idol_group, { as: 'idolGroup',foreignKey: "idol_groupId" });
-      this.belongsTo(Subunit, {as:'subunit', foreignKey: "subunitId" });
-      this.belongsTo(Seiyuu, {as:'seiyuu', foreignKey: "seiyuuId" });
-      this.belongsToMany(Song, { through: 'CharacterSongs', foreignKey: "id_character" });
+    static associate(models) {
+      this.belongsTo(models.Idol_group, { as: 'idolGroup',foreignKey: "idol_groupId" });
+      this.belongsTo(models.Subunit, {as:'subunit', foreignKey: "subunitId" });
+      this.belongsTo(models.Seiyuu, {as:'seiyuu', foreignKey: "seiyuuId" });
+      this.belongsToMany(models.Song, { through: 'CharacterSongs',as: 'songs', foreignKey: "id_character" });
     }
   }
   Character.init({

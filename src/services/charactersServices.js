@@ -2,6 +2,8 @@ const charactersRepository = require("../repositories/characterRepository")
 const { Idol_group } = require("../database/models")
 const { Subunit } = require("../database/models")
 const { Seiyuu } = require("../database/models")
+const { CharacterSongs } = require("../database/models")
+const { Song } = require("../database/models/")
 const { throwError } = require("../utils/errorHandle")
 const { NotFound } = require("../utils/status");
 const { paginated } = require("./paginated.service");
@@ -26,6 +28,8 @@ const getAllCharactersService = async (req) => {
     }
 };
 
+console.log(Seiyuu)
+
 const getCharacterByIdService = async (req) => {
     try {
         const { id } = req.params
@@ -35,6 +39,9 @@ const getCharacterByIdService = async (req) => {
                 { model: Idol_group, as: 'idolGroup', attributes: ["name", 'id'] },
                 { model: Subunit, as: 'subunit', attributes: ["name", 'id'] },
                 { model: Seiyuu, as: 'seiyuu', attributes: ["name", 'id'] },
+                { model: Song,as: 'songs', attributes: ['name', 'id']}
+                
+                
             ],
             attributes: { exclude: ['idol_groupId', 'subunitId', 'seiyuuId', 'createdAt', 'updatedAt'] }
         })
@@ -46,7 +53,7 @@ const getCharacterByIdService = async (req) => {
             ...character.toJSON(),
             idolGroup: getAttributeValue(character, 'idolGroup'),
             subunit: getAttributeValue(character, 'subunit'),
-            seiyuu: getAttributeValue(character, 'seiyuu')
+            seiyuu: getAttributeValue(character, 'seiyuu'),
 
         }
 
